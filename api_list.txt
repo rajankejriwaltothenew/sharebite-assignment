@@ -1,0 +1,56 @@
+1. Section
+	list api - /section/
+	detail api - /section/<id>/
+	post api - /section/
+		payload - {
+			"name": "test name",
+			"description": "test description"
+		}
+	update api(put) - /section/<id>/
+		payload - {
+			"name": "test name",
+			"description": "test description"
+		}
+	delete api - /section/<id>/
+
+2. Item
+	list api - /item/
+	detail api - /item/<id>/
+	post api - /item/
+		payload - {
+			"name": "test name",
+			"description": "test description",
+			"price": 100,
+			"section": <section_id>
+		}
+	update api(put) - /item/<id>/
+		payload - {
+			"name": "test name",
+			"description": "test description",
+			"price": 100,
+			"section": <section_id>
+		}
+	delete api - /item/<id>/
+
+3. Modifiers
+	list api - /modifiers/
+	detail api - /modifiers/<id>/
+	post api - /modifiers/
+		payload - {
+			"description": "test description"
+		}
+	update api(put) - /modifiers/<id>/
+		payload - {
+			"description": "test description"
+		}
+	delete api - /modifiers/<id>/
+
+4. Modifier to Item mapping
+	post api - /modifier-to-item-mapping/
+		payload - {
+			"item": <item_id>,
+			"modifier": <modifier_id>
+		}
+
+5. All Menu
+	get api - /all-menu/
