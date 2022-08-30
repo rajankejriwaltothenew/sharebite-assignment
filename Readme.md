@@ -19,7 +19,7 @@ This project is a Django Rest Framework backend for the assignment.
 `python manage.py runserver`
 should show the admin login page if it is running properly
 
-rest of endpoints are here `http://0.0.0.0:8000/<endpoint>`
+rest of endpoints are here `http://127.0.0.1:8000/<endpoint>`
 
 # Useful info
 1. You can find all the api links and the payloads in api_list.txt file
