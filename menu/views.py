@@ -5,7 +5,7 @@ from rest_framework import status
 from menu.models import Section, Item, Modifiers
 from menu.serializers import (
     SectionSerializer, ItemSerializer, ModifierSerializer,
-    SectionListSerializer
+    SectionListSerializer, ListItemSerializer
 )
 
 
@@ -21,6 +21,13 @@ class ItemViewset(viewsets.ModelViewSet):
 
     serializer_class = ItemSerializer
     queryset = Item.objects.all()
+
+    def get_serializer_class(self):
+        """Function to get serializer class."""
+        if self.action == "list":
+            return ListItemSerializer
+
+        return self.serializer_class
 
 
 class ModifiersViewset(viewsets.ModelViewSet):
