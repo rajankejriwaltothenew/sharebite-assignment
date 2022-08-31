@@ -3,7 +3,7 @@ from rest_framework import serializers
 from menu.models import Section, Item, Modifiers
 
 
-class SectionSeriliazer(serializers.ModelSerializer):
+class SectionSerializer(serializers.ModelSerializer):
     """Serializer to serialize data."""
 
     class Meta:
@@ -13,7 +13,7 @@ class SectionSeriliazer(serializers.ModelSerializer):
         fields = ('id', 'name', 'description')
 
 
-class ItemSeriliazer(serializers.ModelSerializer):
+class ItemSerializer(serializers.ModelSerializer):
     """Serializer to serialize data."""
 
     class Meta:
@@ -23,7 +23,7 @@ class ItemSeriliazer(serializers.ModelSerializer):
         fields = ('id', 'name', 'description', 'price', 'section')
 
 
-class ModifierSeriliazer(serializers.ModelSerializer):
+class ModifierSerializer(serializers.ModelSerializer):
     """Serializer to serialize data."""
 
     class Meta:
@@ -33,10 +33,10 @@ class ModifierSeriliazer(serializers.ModelSerializer):
         fields = ('id', 'description')
 
 
-class ItemListSeriliazer(serializers.ModelSerializer):
+class ItemListSerializer(serializers.ModelSerializer):
     """Serializer to serialize data."""
 
-    modifiers = ModifierSeriliazer(many=True)
+    modifiers = ModifierSerializer(many=True)
 
     class Meta:
         """Meta class."""
@@ -45,10 +45,10 @@ class ItemListSeriliazer(serializers.ModelSerializer):
         fields = ('id', 'name', 'modifiers')
 
 
-class SectionListSeriliazer(serializers.ModelSerializer):
+class SectionListSerializer(serializers.ModelSerializer):
     """Serializer to serialize data."""
 
-    item = ItemListSeriliazer(many=True)
+    item = ItemListSerializer(many=True)
 
     class Meta:
         """Meta class."""

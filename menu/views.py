@@ -4,29 +4,29 @@ from rest_framework import status
 
 from menu.models import Section, Item, Modifiers
 from menu.serializers import (
-    SectionSeriliazer, ItemSeriliazer, ModifierSeriliazer,
-    SectionListSeriliazer
+    SectionSerializer, ItemSerializer, ModifierSerializer,
+    SectionListSerializer
 )
 
 
 class SectionViewset(viewsets.ModelViewSet):
     """This class is used to perform crud operations on Sections."""
 
-    serializer_class = SectionSeriliazer
+    serializer_class = SectionSerializer
     queryset = Section.objects.all()
 
 
 class ItemViewset(viewsets.ModelViewSet):
     """This class is used to perform crud operations on Item."""
 
-    serializer_class = ItemSeriliazer
+    serializer_class = ItemSerializer
     queryset = Item.objects.all()
 
 
 class ModifiersViewset(viewsets.ModelViewSet):
     """This class is used to perform crud operations on Modifiers."""
 
-    serializer_class = ModifierSeriliazer
+    serializer_class = ModifierSerializer
     queryset = Modifiers.objects.all()
 
 
@@ -76,5 +76,5 @@ class ModifierToItemMappingApiView(views.APIView):
 class GetAllMenuListApiView(generics.ListAPIView):
     """This class is used to get all the menu items."""
 
-    serializer_class = SectionListSeriliazer
+    serializer_class = SectionListSerializer
     queryset = Section.objects.all()
